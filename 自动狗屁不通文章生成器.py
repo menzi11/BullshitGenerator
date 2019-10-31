@@ -174,8 +174,11 @@ xx = "学生会退会"
     "说过一句富有哲理的话",
 ]
 
+重复度 = 2
+
 def 洗牌遍历(列表):
-    池 = list(列表)
+    global 重复度
+    池 = list(列表) * 重复度
     while True:
         random.shuffle(池)
         for 元素 in 池:
