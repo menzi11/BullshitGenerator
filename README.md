@@ -1,4 +1,4 @@
-# 文本生成器
+# 文章生成器
 
 https://suulnnka.github.io/BullshitGenerator/index.html
  
