@@ -175,9 +175,9 @@ xx = "学生会退会"
 ]
 
 def 来点名人名言():
-    xx = 名人名言[random.randint(0,len(名人名言)-1)]
-    xx = xx.replace(  "a",前面垫话[random.randint(0,len(前面垫话)-1)] )
-    xx = xx.replace(  "b",后面垫话[random.randint(0,len(后面垫话)-1)] )
+    xx = random.choice(名人名言)
+    xx = xx.replace(  "a", random.choice(前面垫话))
+    xx = xx.replace(  "b", random.choice(后面垫话))
     return xx
 
 def 另起一段():
@@ -196,6 +196,6 @@ for x in xx:
         elif 分支 < 20 :
             tmp += 来点名人名言()
         else:
-            tmp += 废话[random.randint(0,len(废话)-1)]
+            tmp += random.choice(废话)
     tmp = tmp.replace("x",xx)
     print(tmp)
