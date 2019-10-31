@@ -209,11 +209,11 @@ function 生成文章(){
         文章.push(章节);
     }
     let 排版 = "<div>" + 文章.join("</div><div>") + "</div>";
-    $("#paper").innerHTML = 排版;
+    $("#论文").innerHTML = 排版;
 }
 
 </script>
 <div>bullshit generator</div>
 <div>主题<input value="一天掉多少根头发"></input></div>
 <div></div><button onclick="生成文章()">生成</button></div>
-<div id="paper"></div>
+<div id="论文"></div>
