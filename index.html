@@ -2,6 +2,7 @@
   <head>
     <title>文章生成器</title>
     <meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM8WXEWW3P"></script>
   </head>
   <div id="主体">
@@ -237,53 +238,108 @@ function 生成文章(){
 
 </script>
 <style>
-  html{
-    font-size: 1.3vw;
-    color: #333333;
+  @media screen and (max-width: 1024px) {
+    html{
+      font-size: 2vw;
+      color: #333333;
+    }
+    #主体{
+      border: 2px solid #333333;
+      margin: 10px;
+      padding: 10px;
+      background: #f8f8f8;
+    }
+    #标题{
+      font-size: 1.9rem;
+      line-height: 1.9rem;
+      text-align: center;
+    }
+    #主题{
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0px;
+    }
+    #主题 span{
+      font-size: 1rem;
+      vertical-align: baseline;
+      margin-left: 10px;
+    }
+    #主题 input{
+      border: none;
+      border-bottom:#666 2px solid;
+      padding: 1px 0 0 0;
+      margin: 0px 10px 0 10px;
+      vertical-align: baseline;
+      font-size: 1rem;
+      background: #f8f8f8;
+      color: #333333;
+      text-align: center;
+      width-min:20%;
+    }
+    #主题 button{
+      border: 0;
+      padding: 5px 15px 5px 15px;
+      margin: 0;
+      vertical-align: top;
+      font-size: 0.75rem;
+      background: #454545;
+      color: #efefef;
+    }
+    #文章 div{
+      margin-top: 10px;
+    }
   }
-  #主体{
-    border: 2px solid #333333;
-    margin: 20px;
-    padding: 20px;
-    background: #f8f8f8;
+  
+  @media screen and (min-width: 1024px) {
+    html{
+      font-size: 1.3vw;
+      color: #333333;
+    }
+    #主体{
+      border: 2px solid #333333;
+      margin: 20px;
+      padding: 20px;
+      background: #f8f8f8;
+    }
+    #标题{
+      font-size: 1.9rem;
+      line-height: 1.9rem;
+      text-align: center;
+    }
+    #主题{
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0px;
+    }
+    #主题 span{
+      font-size: 1rem;
+      vertical-align: baseline;
+      margin-left: 20px;
+    }
+    #主题 input{
+      border: none;
+      border-bottom:#666 2px solid;
+      padding: 1px 0 0 0;
+      margin: 0px 20px 0 20px;
+      vertical-align: baseline;
+      font-size: 1rem;
+      background: #f8f8f8;
+      color: #333333;
+      text-align: center;
+      width-min:20%;
+    }
+    #主题 button{
+      border: 0;
+      padding: 5px 15px 5px 15px;
+      margin: 0;
+      vertical-align: top;
+      font-size: 0.75rem;
+      background: #454545;
+      color: #efefef;
+    }
+    #文章 div{
+      margin-top: 20px;
+    }
   }
-  #标题{
-    font-size: 1.9rem;
-    line-height: 1.9rem;
-    text-align: center;
-  }
-  #主题{
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0px;
-  }
-  #主题 span{
-    font-size: 1rem;
-    vertical-align: baseline;
-    margin-left: 20px;
-  }
-  #主题 input{
-    border: none;
-    border-bottom:#666 2px solid;
-    padding: 1px 0 0 0;
-    margin: 0px 20px 0 20px;
-    vertical-align: baseline;
-    font-size: 1rem;
-    background: #f8f8f8;
-    color: #333333;
-    text-align: center;
-    width:20%;
-  }
-  #主题 button{
-    border: 0;
-    padding: 5px 15px 5px 15px;
-    margin: 0;
-    vertical-align: top;
-    font-size: 0.75rem;
-    background: #454545;
-    color: #efefef;
-  }
-  #文章 div{
-    margin-top: 20px;
-  }
+  
 </style>
