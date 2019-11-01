@@ -174,10 +174,24 @@ xx = "学生会退会"
     "说过一句富有哲理的话",
 ]
 
+重复度 = 2
+
+def 洗牌遍历(列表):
+    global 重复度
+    池 = list(列表) * 重复度
+    while True:
+        random.shuffle(池)
+        for 元素 in 池:
+            yield 元素
+
+下一句废话 = 洗牌遍历(废话)
+下一句名人名言 = 洗牌遍历(名人名言)
+
 def 来点名人名言():
-    xx = random.choice(名人名言)
-    xx = xx.replace(  "a", random.choice(前面垫话))
-    xx = xx.replace(  "b", random.choice(后面垫话))
+    global 下一句名人名言
+    xx = next(下一句名人名言)
+    xx = xx.replace(  "a",random.choice(前面垫话) )
+    xx = xx.replace(  "b",random.choice(后面垫话) )
     return xx
 
 def 另起一段():
@@ -197,6 +211,6 @@ if __name__ == "__main__":
             elif 分支 < 20 :
                 tmp += 来点名人名言()
             else:
-                tmp += random.choice(废话)
+                tmp += next(下一句废话)
         tmp = tmp.replace("x",xx)
         print(tmp)
