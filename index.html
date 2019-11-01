@@ -1,4 +1,27 @@
+<html>
+  <head>
+    <title>文章生成器</title>
+    <meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM8WXEWW3P"></script>
+  </head>
+  <div id="主体">
+    <div id="标题">文章生成器</div>
+    <div id="主题">
+      <span>主题</span>
+      <input value="一天掉多少根头发"></input>
+      <button onclick="生成文章()">生成</button>
+    </div>
+    <div id="文章"></div>
+  </div>
+</html>
+
 <script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BM8WXEWW3P');
+// gtag('event', 'open');
+console.log(window.dataLayer)
 
 window.$ = function (selector) {
   return document.querySelector(selector);
@@ -209,11 +232,59 @@ function 生成文章(){
         文章.push(章节);
     }
     let 排版 = "<div>" + 文章.join("</div><div>") + "</div>";
-    $("#论文").innerHTML = 排版;
+    $("#文章").innerHTML = 排版;
+    gtag('event', 'generator', {'event_category' : 'bullshitgenerator','event_label' : 'generator','value':主题});
 }
 
 </script>
-<div>bullshit generator</div>
-<div>主题<input value="一天掉多少根头发"></input></div>
-<div></div><button onclick="生成文章()">生成</button></div>
-<div id="论文"></div>
+<style>
+  html{
+    font-size: 1.3vw;
+    color: #333333;
+  }
+  #主体{
+    border: 2px solid #333333;
+    margin: 20px;
+    padding: 20px;
+    background: #f8f8f8;
+  }
+  #标题{
+    font-size: 1.9rem;
+    line-height: 1.9rem;
+    text-align: center;
+  }
+  #主题{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0px;
+  }
+  #主题 span{
+    font-size: 1rem;
+    vertical-align: baseline;
+    margin-left: 20px;
+  }
+  #主题 input{
+    border: none;
+    border-bottom:#666 2px solid;
+    padding: 1px 0 0 0;
+    margin: 0px 20px 0 20px;
+    vertical-align: baseline;
+    font-size: 1rem;
+    background: #f8f8f8;
+    color: #333333;
+    text-align: center;
+    width:20%;
+  }
+  #主题 button{
+    border: 0;
+    padding: 5px 15px 5px 15px;
+    margin: 0;
+    vertical-align: top;
+    font-size: 0.75rem;
+    background: #454545;
+    color: #efefef;
+  }
+  #文章 div{
+    margin-top: 20px;
+  }
+</style>
