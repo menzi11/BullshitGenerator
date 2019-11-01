@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM8WXEWW3P"></script>
   </head>
-  <div id="主体">
-    <div id="标题">文章生成器</div>
-    <div id="主题">
-      <span>主题</span>
-      <input value="一天掉多少根头发"></input>
-      <button onclick="生成文章()">生成</button>
+  <body>
+    <div id="主体">
+      <div id="标题">文章生成器</div>
+      <div id="主题">
+        <span>主题</span>
+        <input value="一天掉多少根头发"></input>
+        <button onclick="生成文章()">生成</button>
+      </div>
+      <div id="文章"></div>
     </div>
-    <div id="文章"></div>
-  </div>
+  </body>
 </html>
 
 <script>
@@ -243,34 +245,37 @@ function 生成文章(){
       font-size: 2vw;
       color: #333333;
     }
+    body{
+      margin:0;
+    }
     #主体{
       border: 2px solid #333333;
-      margin: 10px;
-      padding: 10px;
+      margin: 6px;
+      padding: 6px;
       background: #f8f8f8;
     }
     #标题{
-      font-size: 1.9rem;
-      line-height: 1.9rem;
+      font-size: 3rem;
+      line-height: 3rem;
       text-align: center;
     }
     #主题{
       text-align: center;
-      margin-top: 10px;
+      margin-top: 6px;
       font-size: 0px;
     }
     #主题 span{
-      font-size: 1rem;
+      font-size: 2rem;
       vertical-align: baseline;
-      margin-left: 10px;
+      margin-left: 6px;
     }
     #主题 input{
       border: none;
       border-bottom:#666 2px solid;
       padding: 1px 0 0 0;
-      margin: 0px 10px 0 10px;
+      margin: 0px 6px 0 6px;
       vertical-align: baseline;
-      font-size: 1rem;
+      font-size: 2rem;
       background: #f8f8f8;
       color: #333333;
       text-align: center;
@@ -278,15 +283,16 @@ function 生成文章(){
     }
     #主题 button{
       border: 0;
-      padding: 5px 15px 5px 15px;
+      padding: 3px 7px 3px 7px;
       margin: 0;
       vertical-align: top;
-      font-size: 0.75rem;
+      font-size: 1.4rem;
       background: #454545;
       color: #efefef;
     }
     #文章 div{
-      margin-top: 10px;
+      margin-top: 6px;
+      font-size: 2rem;
     }
   }
   
@@ -294,6 +300,9 @@ function 生成文章(){
     html{
       font-size: 1.3vw;
       color: #333333;
+    }
+    body{
+      margin:0;
     }
     #主体{
       border: 2px solid #333333;
