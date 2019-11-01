@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 
-df = pd.read_csv(r'E:\mydata\refractive_index\bullshit_generator.csv')
+df = pd.read_csv(r'\bullshit_generator.csv')
 
 def get_lists(df,phrase):
     return df[df[phrase].notnull()][phrase].tolist()
