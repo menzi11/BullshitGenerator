@@ -5,7 +5,7 @@ import os, re
 import random,readJSON
 
 data = readJSON.读JSON文件("data.json")
-名人名言 = data["famous"] # a 代表前面垫话，b代表后面垫话
+名人名言 = data["famous"] # a 代表前面垫话，b 代表后面垫话
 前面垫话 = data["before"] # 在名人名言前面弄点废话
 后面垫话 = data['after']  # 在名人名言后面弄点废话
 废话 = data['bosh'] # 代表文章主要废话来源
