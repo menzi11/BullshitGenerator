@@ -45,7 +45,7 @@ xx = "学生会退会"
     "对我个人而言，x不仅仅是一个重大的事件，还可能会改变我的人生. ",
 ]
 
-名人名言 = [ # a 代表前面垫话，把代表后面垫话
+名人名言 = [ # a 代表前面垫话，b代表后面垫话
     "爱迪生a，天才是百分之一的勤奋加百分之九十九的汗水。b",
     "查尔斯·史a，一个人几乎可以在任何他怀有无限热忱的事情上成功。b",
     "培根说过，深窥自己的心，而后发觉一切的奇迹在你自己。b",
@@ -200,16 +200,17 @@ def 另起一段():
     xx += "    "
     return xx
 
-
-for x in xx:
-    tmp = str()
-    while ( len(tmp) < 6000 ) :
-        分支 = random.randint(0,100)
-        if 分支 < 5:
-            tmp += 另起一段()
-        elif 分支 < 20 :
-            tmp += 来点名人名言()
-        else:
-            tmp += next(下一句废话)
-    tmp = tmp.replace("x",xx)
-    print(tmp)
+if __name__ == "__main__":
+    xx = input("请输入文章主题:")
+    for x in xx:
+        tmp = str()
+        while ( len(tmp) < 6000 ) :
+            分支 = random.randint(0,100)
+            if 分支 < 5:
+                tmp += 另起一段()
+            elif 分支 < 20 :
+                tmp += 来点名人名言()
+            else:
+                tmp += next(下一句废话)
+        tmp = tmp.replace("x",xx)
+        print(tmp)
