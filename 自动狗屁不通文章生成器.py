@@ -4,7 +4,7 @@
 import os, re
 import random
 
-xx = "学生会退会"
+xx = "为什么要玩CSGO"
 
 废话 = [ # x 代表文章主题
     "现在, 解决x的问题, 是非常非常重要的. 所以, ",
