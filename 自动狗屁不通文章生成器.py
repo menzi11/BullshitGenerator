@@ -1,4 +1,4 @@
-#!/usr/bin/python
+区块链#!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
 import os, re
