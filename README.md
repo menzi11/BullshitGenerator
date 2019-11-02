@@ -1,15 +1,16 @@
-# 狗屁不通文章生成器
+# 文章生成器
 # BullshitGenerator
 
-偶尔需要一些中文文字用于GUI开发时测试文本渲染. __本项目只做这一项, 请勿用于其他任何用途__.
+原项目地址 https://github.com/menzi11/BullshitGenerator
 
-Needs to generate some texts to test if my GUI rendering codes good or not. so I made this.
+网页版地址 https://suulnnka.github.io/BullshitGenerator/index.html
 
-本项目为python3版本, 还有由suulnnka修改在线版, 使用更加方便:
-https://suulnnka.github.io/BullshitGenerator/index.html
+修改:  
+1.设计并移植至浏览器  
+2.修正标点及布局的bug  
+3.更加中文化编程  
 
-下一步计划:
-1. 防止文章过于内容重复
-1. 加入更多啰嗦话.
-1. 加入马三立<开会迷>里的内容
-1. 加入手写体直接渲染出图片的功能(__仅仅用于测试本人的打印机是否工作正常, 请勿做它用__).
+未来可以做的点:  
+1.解决python与javascript代码协同问题  
+2.更美的文字布局排版  
+3.更多的语料库与更好的生成算法  
