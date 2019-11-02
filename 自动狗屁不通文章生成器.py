@@ -40,10 +40,17 @@ def 另起一段(段落结尾):
 
 if __name__ == "__main__":
     xx = input("请输入文章主题（多个以空格分隔）：").split(" ")
+    limit = input("请输入每篇大致字数（最小值100，过小则设为最小值，空则默认6000）：")
+    if len(limit) == 0:
+        limit = 6000
+    elif int(limit) < 100:
+        limit = 100
+    else:
+        limit = int(limit)
     for x in xx:
         print(x + "：")
         tmp = "　　" # 两个全角空格
-        while len(tmp) < 6000:
+        while len(tmp) < limit:
             分支 = random.randint(0,100)
             if 分支 < 5:
                 if len(tmp) == 0 or tmp[-1] == "　": pass
@@ -55,8 +62,7 @@ if __name__ == "__main__":
                 else:
                     tmp += 另起一段("。")
             elif 分支 < 20:
-                tmp += 来点名人名言()
+                tmp += 来点名人名言().replace("x",x)
             else:
-                tmp += next(下一句废话)
-        tmp = tmp.replace("x",x)
+                tmp += next(下一句废话).replace("x",x)
         print(tmp)
