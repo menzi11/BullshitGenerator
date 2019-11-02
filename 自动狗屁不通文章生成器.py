@@ -40,9 +40,10 @@ def 另起一段():
 
 if __name__ == "__main__":
     xx = input("请输入文章主题:")
+    wordcount = int(input("请输入大致字数:"))
     for x in xx:
         tmp = str()
-        while ( len(tmp) < 6000 ) :
+        while ( len(tmp) < wordcount ) :
             分支 = random.randint(0,100)
             if 分支 < 5:
                 tmp += 另起一段()
