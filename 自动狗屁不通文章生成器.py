@@ -4,7 +4,8 @@
 import os, re
 import random,readJSON
 data = readJSON.读JSON文件("data.json")
-名人名言 = data["famous"]
+data1 = readJSON.读JSON文件("famous.json")
+名人名言 = data1['famous']
 前面垫话 = data["before"]
 后面垫话 = data['after']
 废话 = data['bosh']
