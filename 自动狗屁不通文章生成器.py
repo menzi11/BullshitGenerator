@@ -22,14 +22,21 @@ def 洗牌遍历(列表):
         for 元素 in 池:
             yield 元素
 
-下一句废话 = 洗牌遍历(废话)
 下一句名人名言 = 洗牌遍历(名人名言)
+下一句废话 = 洗牌遍历(废话)
 
-def 来点名人名言():
+def 来点名人名言(文章主题):
     global 下一句名人名言
     xx = next(下一句名人名言)
     xx = xx.replace("a", random.choice(前面垫话))
     xx = xx.replace("b", random.choice(后面垫话))
+    xx = xx.replace("x", 文章主题)
+    return xx
+
+def 来点废话(文章主题):
+    global 下一句废话
+    xx = next(下一句废话)
+    xx = xx.replace("x", 文章主题)
     return xx
 
 def 另起一段(段落结尾):
@@ -62,9 +69,9 @@ if __name__ == "__main__":
                 else:
                     tmp += 另起一段("。")
             elif 分支 < 20:
-                tmp += 来点名人名言().replace("x",x)
+                tmp += 来点名人名言(x)
             else:
-                tmp += next(下一句废话).replace("x",x)
+                tmp += 来点废话(x)
         if len(tmp) == 0 or tmp[-1] == "　": pass
         elif tmp[-1] in 句内点号:
             tmp = tmp[:-1] + "。"
