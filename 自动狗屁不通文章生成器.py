@@ -65,4 +65,10 @@ if __name__ == "__main__":
                 tmp += 来点名人名言().replace("x",x)
             else:
                 tmp += next(下一句废话).replace("x",x)
+        if len(tmp) == 0 or tmp[-1] == "　": pass
+        elif tmp[-1] in 句内点号:
+            tmp = tmp[:-1] + "。"
+        elif tmp[-1] in 句末点号: pass
+        else:
+            tmp += "。"
         print(tmp)
