@@ -36,12 +36,12 @@ https://suulnnka.github.io/BullshitGenerator/index.html
 
 这个分支用 PHP 实现了“狗屁不通文章生成器”，并且加入了**渲染图片**的功能。
 
-点击[这里](https://i.akarin.dev/bullshit/)查看在线演示。
+参考原 repo 的 [Issue #39](https://github.com/menzi11/BullshitGenerator/issues/39)，添加了由 [@acdzh](https://github.com/acdzh) 收集的大量名言。
 
 可以对参数自定义：
 
 | 参数名 | 说明 | 示例 |
-| --- | --- | ---|
+| --- | --- | --- |
 | `word` | 文章的主题 | 学生会退会 |
 | `length` | 文章的字数 | 1000 |
 | `width` | 生成图片的宽度。文章默认以纯文本形式输出，设定此项则以图片形式输出 | 500 |
@@ -52,4 +52,8 @@ https://suulnnka.github.io/BullshitGenerator/index.html
 
 ~~不设定上限的话我的服务器说不定就要炸了⊂彡☆))∀`)~~
 
-使用示例：[https://i.akarin.dev/bullshit/?word=膜蛤&length=1500&width=640&fontsize=24](https://i.akarin.dev/bullshit/?word=膜蛤&length=1500&width=640&fontsize=24)
+输出纯文本示例：[https://i.akarin.dev/bullshit/?word=膜蛤&length=6000](https://i.akarin.dev/bullshit/?word=膜蛤&length=6000)
+
+输出图片示例：[https://i.akarin.dev/bullshit/?word=膜蛤&length=500&width=640&fontsize=16](https://i.akarin.dev/bullshit/?word=膜蛤&length=500&width=640&fontsize=16)
+
+![](https://i.akarin.dev/bullshit/?word=膜蛤&length=500&width=640&fontsize=16)
