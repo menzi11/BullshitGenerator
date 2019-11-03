@@ -1,0 +1,29 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "charset": "utf8",
+    "inlineSourceMap": false,
+    "importHelpers": true,
+    "locale": "zh-CN",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "newLine": "CRLF",
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+    "preserveConstEnums": true,
+    "pretty": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "sourceMap": true,
+    "strictPropertyInitialization": false,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "target": "es2018"
+  }
+}
