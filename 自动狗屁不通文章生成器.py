@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 import os, re
-import random,readJSON
+import random, readJSON
 
 data = readJSON.读JSON文件("data.json")
 名人名言 = data["famous"] # a 代表前面垫话，b代表后面垫话
@@ -28,27 +28,28 @@ def 洗牌遍历(列表):
 def 来点名人名言():
     global 下一句名人名言
     xx = next(下一句名人名言)
-    xx = xx.replace(  "a",random.choice(前面垫话) )
-    xx = xx.replace(  "b",random.choice(后面垫话) )
+    xx = xx.replace("a", random.choice(前面垫话))
+    xx = xx.replace("b", random.choice(后面垫话))
     return xx
 
 def 另起一段():
-    xx = ". "
+    xx = ""
     xx += "\r\n"
     xx += "    "
     return xx
 
 if __name__ == "__main__":
-    xx = input("请输入文章主题:")
-    for x in xx:
-        tmp = str()
-        while ( len(tmp) < 6000 ) :
-            分支 = random.randint(0,100)
-            if 分支 < 5:
-                tmp += 另起一段()
-            elif 分支 < 20 :
-                tmp += 来点名人名言()
-            else:
-                tmp += next(下一句废话)
-        tmp = tmp.replace("x",xx)
-        print(tmp)
+    xx = input("请输入文章主题: ")
+    if xx == "":
+        xx = data["title"]
+    tmp = 另起一段()
+    while len(tmp) < 6000:
+        分支 = random.randint(0, 99)
+        if 分支 < 5:
+            tmp += 另起一段()
+        elif 分支 < 20:
+            tmp += 来点名人名言()
+        else:
+            tmp += next(下一句废话)
+    tmp = tmp.replace("x", xx)
+    print(tmp)
