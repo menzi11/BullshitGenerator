@@ -2,6 +2,11 @@
 // bullshit.php by TransparentLC
 // “狗屁不通文章生成器”PHP版，加入生成图片功能
 
+// 不准缓存
+header('Cache-Control: no-cache, must-revalidate');
+header('Pragma: no-cache');
+header("Expires: 0");
+
 // 输出自动换行的文本，用于使用gd在图片上添加文字
 function imagewraptext($size, $angle, $width, $fontfile, $text) {
     $content = '';
@@ -14,10 +19,10 @@ function imagewraptext($size, $angle, $width, $fontfile, $text) {
 }
 
 function 替换标点($文本) {
-    $文本 = str_replace([', ', ','], '，', $文本);
-    $文本 = str_replace(['. ', '.'], '。', $文本);
-    $文本 = str_replace([': ', ':'], '：', $文本);
-    $文本 = str_replace(['? ', '?'], '？', $文本);
+    $文本 = str_replace(['， ', ', ', ','], '，', $文本);
+    $文本 = str_replace(['。 ', '. ', '.'], '。', $文本);
+    $文本 = str_replace(['： ', ': ', ':'], '：', $文本);
+    $文本 = str_replace(['？ ', '? ', '?'], '？', $文本);
     return $文本;
 }
 
