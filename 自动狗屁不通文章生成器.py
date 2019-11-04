@@ -20,7 +20,8 @@ def 洗牌遍历(列表):
     while True:
         random.shuffle(池)
         for 元素 in 池:
-            yield 元素
+            if not tmp.endswith(元素):
+                yield 元素
 
 下一句废话 = 洗牌遍历(废话)
 下一句名人名言 = 洗牌遍历(名人名言)
