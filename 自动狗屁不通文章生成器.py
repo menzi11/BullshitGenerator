@@ -10,7 +10,20 @@ data1 = readJSON.读JSON文件("famous.json")
 前面垫话 = data["before"]
 后面垫话 = data['after']
 废话 = data['bosh']
-xx = data['title']
+xx = "学生会退会"
+
+重复度 = 2	
+
+def 洗牌遍历(列表):	
+    global 重复度	
+    池 = list(列表) * 重复度	
+    while True:	
+        random.shuffle(池)	
+        for 元素 in 池:	
+            yield 元素	
+
+下一句废话 = 洗牌遍历(废话)	
+下一句名人名言 = 洗牌遍历(名人名言)
 def 来点名人名言():
     global 下一句名人名言
     xx = next(下一句名人名言)
