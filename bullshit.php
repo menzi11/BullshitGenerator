@@ -78,7 +78,10 @@ $文章[] = '　　' . mb_substr($段落, 0, mb_strlen($段落) - 1) . '。';
 $文章 = str_replace('x', $主题, join("\n", $文章));
 
 // 不生成图片的话，直接输出文本
-if (!$图片宽度) die($文章);
+if (!$图片宽度) {
+    header('Content-Type: text/plain; charset=UTF-8');
+    die($文章);
+}
 
 // 输出图片
 $文章 = imagewraptext($字号, 0, $图片宽度 - $边距 * 2, $字体路径, $文章);
