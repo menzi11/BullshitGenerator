@@ -51,8 +51,8 @@ let 论述 = [
     "带着这些问题，我们来审视一下主题。 ",
     "所谓主题，关键是主题需要如何写。 ",
     "我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 ",
-    "问题的关键究竟为何? ",
-    "主题因何而发生?",
+    "问题的关键究竟为何？ ",
+    "主题因何而发生？ ",
     "每个人都不得不面对这些问题。 在面对这种问题时， ",
     "一般来讲，我们都必须务必慎重的考虑考虑。 ",
     "要想清楚，主题，到底是一种怎么样的存在。 ",
@@ -70,7 +70,11 @@ let 论述 = [
     "一般来说， ",
     "总结的来说， ",
     "既然如何， ",
-    "经过上述讨论",
+    "经过上述讨论， ",
+    "这样看来， ",
+    "从这个角度来看， ",
+    "可是，即使是这样，主题的出现仍然代表了一定的意义。 ",
+    "对我个人而言，主题不仅仅是一个重大的事件，还可能会改变我的人生。 "
 ]
 
 let 名人名言 = [
@@ -182,11 +186,16 @@ let 后面垫话 = [
     "这启发了我， ",
     "我希望诸位也能好好地体会这句话。 ",
     "这句话语虽然很短，但令我浮想联翩。 ",
+    "这似乎解答了我的疑惑。 ",
 ]
 
 let 前面垫话 = [
     "曾经说过",
     "在不经意间这样说过",
+    "说过一句著名的话",
+    "曾经提到过",
+    "说过一句富有哲理的话",
+    "曾说过这样一句话",
 ]
 
 function 随便取一句(列表){
@@ -212,41 +221,40 @@ function 来点论述(){
     return 句子;
 }
 
-function 增加段落(章节){
-    if(章节[章节.length-1] === " "){
-        章节 = 章节.slice(0,-2)
+function 增加段落(段落){
+    if(段落[段落.length-1] === " "){
+        段落 = 段落.slice(0,-2)
     }
-    return "　　" + 章节 + "。 "
+    return "　　" + 段落 + "。 "
 }
 
 function 生成文章(){
     主题 = $('input').value
     let 文章 = []
-    for(let 空 in 主题){
-        let 章节 = "";
-        let 章节长度 = 0;
-        while( 章节长度 < 6000 ){
-            let 随机数 = 随便取一个数();
-            if(随机数 < 5 && 章节.length > 200){
-                章节 = 增加段落(章节);
-                文章.push(章节); 
-                章节 = "";
-            }else if(随机数 < 20){
-                let 句子 = 来点名人名言();
-                章节长度 = 章节长度 + 句子.length;
-                章节 = 章节 + 句子;
-            }else{
-                let 句子 = 来点论述();
-                章节长度 = 章节长度 + 句子.length;
-                章节 = 章节 + 句子;
-            }
+    let 段落 = "";
+    let 文章长度 = 0;
+    while( 文章长度 < 12000 ){
+        let 随机数 = 随便取一个数();
+        if(随机数 < 5 && 段落.length > 200){
+            段落 = 增加段落(段落);
+            文章.push(段落);
+            段落 = "";
+        }else if(随机数 < 20){
+            let 句子 = 来点名人名言();
+            文章长度 = 文章长度 + 句子.length;
+            段落 = 段落 + 句子;
+        }else{
+            let 句子 = 来点论述();
+            文章长度 = 文章长度 + 句子.length;
+            段落 = 段落 + 句子;
         }
-        章节 = 增加段落(章节);
-        文章.push(章节);
     }
+    段落 = 增加段落(段落);
+    文章.push(段落);
+
     let 排版 = "<div>" + 文章.join("</div><div>") + "</div>";
     $("#文章").innerHTML = 排版;
-    gtag('event', 'generator', {'event_category' : 'bullshitgenerator','event_label' : 'generator','value':主题});
+    gtag('event', 'generator', {'event_label': 主题});
 }
 
 </script>
@@ -257,7 +265,7 @@ function 生成文章(){
       color: #333333;
     }
     body{
-      margin:0;
+      margin: 0;
     }
     #主体{
       border: 2px solid #333333;
@@ -282,7 +290,7 @@ function 生成文章(){
     }
     #主题 input{
       border: none;
-      border-bottom:#666 2px solid;
+      border-bottom: #666666 2px solid;
       padding: 1px 0 0 0;
       margin: 0px 6px 0 6px;
       vertical-align: baseline;
@@ -290,7 +298,7 @@ function 生成文章(){
       background: #f8f8f8;
       color: #333333;
       text-align: center;
-      width-min:20%;
+      min-width: 20%;
     }
     #主题 button{
       border: 0;
@@ -314,12 +322,12 @@ function 生成文章(){
       text-align: right;
     }
     .链接{
-      color:#4169e1;
+      color: #4169e1;
     }
     .图标{
       height: 1rem;
       width: 1rem;
-      vertical-align:top;
+      vertical-align: top;
       margin-top: 2px;
     }
   }
@@ -330,7 +338,7 @@ function 生成文章(){
       color: #333333;
     }
     body{
-      margin:0;
+      margin: 0;
     }
     #主体{
       border: 2px solid #333333;
@@ -355,7 +363,7 @@ function 生成文章(){
     }
     #主题 input{
       border: none;
-      border-bottom:#666 2px solid;
+      border-bottom: #666666 2px solid;
       padding: 1px 0 0 0;
       margin: 0px 20px 0 20px;
       vertical-align: baseline;
@@ -363,7 +371,7 @@ function 生成文章(){
       background: #f8f8f8;
       color: #333333;
       text-align: center;
-      width-min:20%;
+      min-width: 20%;
     }
     #主题 button{
       border: 0;
@@ -386,16 +394,16 @@ function 生成文章(){
       text-align: right;
     }
     .链接{
-      color:#4169e1;
+      color: #4169e1;
     }
     #页脚 span{
-      padding:2px 0 0 0;
+      padding: 2px 0 0 0;
       vertical-align: baseline;
     }
     .图标{
       height: 0.7rem;
       width: 0.7rem;
-      vertical-align:top;
+      vertical-align: top;
       margin-top: 4px;
     }
   }
