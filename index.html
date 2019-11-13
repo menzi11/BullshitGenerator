@@ -10,7 +10,7 @@
       <div id="标题">文章生成器</div>
       <div id="主题">
         <span>主题</span>
-        <input value="一天掉多少根头发"></input>
+        <input></input>
         <button onclick="生成文章()">生成</button>
       </div>
       <div id="文章"></div>
@@ -40,9 +40,11 @@ window.$ = function (selector) {
   return document.querySelector(selector);
 }
 
-let 主题 = "一天掉多少根头发"
+let 主题 = new URL(window.location.href).searchParams.get('主题') || "一天掉多少根头发"
 
-let 论述 = [ 
+$('input').value = 主题;
+
+let 论述 = [
     "现在，解决主题的问题，是非常非常重要的。 所以， ",
     "我们不得不面对一个非常尴尬的事实，那就是， ",
     "主题的发生，到底需要如何做到，不主题的发生，又会如何产生。 ",
@@ -198,13 +200,21 @@ let 前面垫话 = [
     "曾说过这样一句话",
 ]
 
+let 随机种子 = new URL(window.location.href).searchParams.get('随机种子') || Date.now() % 1000000;
+
+function 随机数() {
+    const value = 随机种子 / 1000000;
+    随机种子 = Math.floor(随机种子 * 12347 + 99876) % 1000000;
+    return value;
+};
+
 function 随便取一句(列表){
-    let 坐标 = Math.floor( Math.random() * 列表.length );
+    let 坐标 = Math.floor( 随机数() * 列表.length );
     return 列表[坐标];
 }
 
 function 随便取一个数(最小值 = 0,最大值 = 100){
-    let 数字 = Math.random()*( 最大值 - 最小值 ) + 最小值;
+    let 数字 = 随机数()*( 最大值 - 最小值 ) + 最小值;
     return 数字;
 }
 
@@ -230,6 +240,7 @@ function 增加段落(段落){
 
 function 生成文章(){
     主题 = $('input').value
+    history.pushState({title: '',url: window.location.href}, '' ,'?主题=' + 主题 + '&随机种子=' + 随机种子);
     let 文章 = []
     let 段落 = "";
     let 文章长度 = 0;
@@ -255,6 +266,10 @@ function 生成文章(){
     let 排版 = "<div>" + 文章.join("</div><div>") + "</div>";
     $("#文章").innerHTML = 排版;
     gtag('event', 'generator', {'event_label': 主题});
+}
+
+if (new URL(window.location.href).searchParams.get('主题')) {
+    生成文章();
 }
 
 </script>
@@ -331,7 +346,7 @@ function 生成文章(){
       margin-top: 2px;
     }
   }
-  
+
   @media screen and (min-width: 1024px) {
     html{
       font-size: 1.3vw;
@@ -407,5 +422,5 @@ function 生成文章(){
       margin-top: 4px;
     }
   }
-  
+
 </style>
