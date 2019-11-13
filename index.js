@@ -178,9 +178,9 @@ function 增加段落(章节){
     return "　　" + 章节 + "。 "
 }
 
-function 生成文章(伪主题){
+function 生成文章(){
     let 文章 = []
-    for(let 空 in 伪主题){
+    for(let 空 in 主题){
         let 章节 = "";
         let 章节长度 = 0;
         while( 章节长度 < 6000 ){

@@ -6,8 +6,8 @@ window.$ = function (selector) {
 }
 
 function 写文章(){
-    伪主题 = $('input').value
-    let 文章 = 生成文章(伪主题)
+    主题 = $('input').value
+    let 文章 = 生成文章(主题)
     let 排版 = "<div>" + 文章.join("</div><div>") + "</div>";
     $("#论文").innerHTML = 排版;
 }
