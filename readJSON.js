@@ -7,8 +7,8 @@
 
 const fs = require("fs")
 function 读JSON文件(fileName=''){
-    var strList = fileName.split(".");
-    var string;
+    let strList = fileName.split(".");
+    let string;
     if(strList[strList.length-1].toLowerCase()=="json"){
         string = fs.readFileSync(fileName);
     }
