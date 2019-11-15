@@ -39,7 +39,21 @@ def 另起一段():
     return xx
 
 if __name__ == "__main__":
+    root = './generated/'
+    files = os.listdir(root)
     xx = input("请输入文章主题:")
+    name = xx + '.txt'
+    if name in os.listdir(root):
+        x = 1
+        for i in range(len(files)):
+            if name == files[i][0:-4]:
+                x += 1
+        print("your {} file is already existed, continue to do so will override your file".format(xx))
+        Do = input('do you want to add num {} behind you filename?(Y/N):'.format(x))
+        if Do == 'N' or Do == 'n':
+            exit(1);
+        else:
+            name = xx + '({}).txt'.format(x)
     for x in xx:
         tmp = str()
         while ( len(tmp) < 6000 ) :
@@ -52,3 +66,6 @@ if __name__ == "__main__":
                 tmp += next(下一句废话)
         tmp = tmp.replace("x",xx)
         print(tmp)
+        with open(root + name,'a') as f:
+            f.write(tmp)
+
