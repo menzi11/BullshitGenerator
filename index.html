@@ -278,6 +278,7 @@ function 生成文章(){
 
 if (获取网址参数('主题')) {
     生成文章();
+    gtag('event', 'shared', {'event_label': 主题,'seed': 随机种子,'title_seed':主题+'_'+随机种子});
 }
 
 </script>
