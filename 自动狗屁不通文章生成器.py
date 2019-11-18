@@ -10,6 +10,11 @@ data = readJSON.读JSON文件("data.json")
 后面垫话 = data['after']  # 在名人名言后面弄点废话
 废话 = data['bosh'] # 代表文章主要废话来源
 
+废话提问 = data['ask'] # 
+废话解决方案 = data['solution']
+废话总结 = data['conclusion']
+
+
 xx = "学生会退会"
 
 重复度 = 2
@@ -24,12 +29,19 @@ def 洗牌遍历(列表):
 
 下一句废话 = 洗牌遍历(废话)
 下一句名人名言 = 洗牌遍历(名人名言)
+下一句深度废话 = 洗牌遍历(废话解决方案)
 
 def 来点名人名言():
     global 下一句名人名言
     xx = next(下一句名人名言)
     xx = xx.replace(  "a",random.choice(前面垫话) )
     xx = xx.replace(  "b",random.choice(后面垫话) )
+    return xx
+def 来点深入思考():
+    global 下一句深度废话
+    xx = next(下一句深度废话)
+    xx = xx.replace(  "b",random.choice(废话提问) )
+    xx = xx.replace(  "a",random.choice(废话总结) )
     return xx
 
 def 另起一段():
@@ -48,7 +60,10 @@ if __name__ == "__main__":
                 tmp += 另起一段()
             elif 分支 < 20 :
                 tmp += 来点名人名言()
-            else:
+            elif 分支 < 90:
                 tmp += next(下一句废话)
+            else:
+                tmp += 来点深入思考()
+
         tmp = tmp.replace("x",xx)
         print(tmp)
