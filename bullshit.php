@@ -18,6 +18,10 @@ function imagewraptext($size, $angle, $width, $fontfile, $text) {
     return $content;
 }
 
+function 随机取一个($数组) {
+    return $数组[array_rand($数组)];
+}
+
 function 替换标点($文本) {
     $文本 = str_replace(['， ', ', ', ','], '，', $文本);
     $文本 = str_replace(['。 ', '. ', '.'], '。', $文本);
@@ -28,8 +32,15 @@ function 替换标点($文本) {
 
 function 垫话($文本) {
     global $前面垫话, $后面垫话;
-    $文本 = str_replace('a', $前面垫话[array_rand($前面垫话)], $文本);
-    $文本 = str_replace('b', $后面垫话[array_rand($后面垫话)], $文本);
+    $文本 = str_replace('a', 随机取一个($前面垫话), $文本);
+    $文本 = str_replace('b', 随机取一个($后面垫话), $文本);
+    return $文本;
+}
+
+function 提问总结($文本) {
+    global $提问, $总结;
+    $文本 = str_replace('b', 随机取一个($提问), $文本);
+    $文本 = str_replace('a', 随机取一个($总结), $文本);
     return $文本;
 }
 
@@ -39,6 +50,9 @@ $名人名言 = $数据['famous']; // a和b分别是前面和后面垫话
 $前面垫话 = $数据['before'];
 $后面垫话 = $数据['after'];
 $废话 = $数据['bosh'];
+$提问 = $数据['ask'];
+$解决方案 = $数据['solution'];
+$总结 = $数据['conclusion'];
 
 // 设定参数
 $主题 = empty($_GET['word']) ? '学生会退会' : $_GET['word'];
@@ -65,9 +79,11 @@ while ($段落总长度 < $长度) {
         $文本 = '';
         $段落 = '';
     } elseif ($分支 < 20) { // 名人名言
-        $文本 = 替换标点(垫话($名人名言[array_rand($名人名言)]));
+        $文本 = 替换标点(垫话(随机取一个($名人名言)));
+    } elseif ($分支 < 30) { // 解决方案
+        $文本 = 替换标点(提问总结(随机取一个($解决方案)));
     } else { // 废话
-        $文本 = 替换标点($废话[array_rand($废话)]);
+        $文本 = 替换标点(随机取一个($废话));
     }
     $段落 .= $文本;
     $段落总长度 += mb_strlen($文本);
