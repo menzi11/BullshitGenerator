@@ -16,6 +16,10 @@
       </div>
       <div id="文章"></div>
     </div>
+    <div id="声明">
+      <p id="声明文字">请勿将生成的文章用于正规用途</p>
+      <p><a class="链接" href="声明.txt">声明</a></p>
+    </div>
     <div id="页脚">
       <p>
         网页版
@@ -44,10 +48,6 @@ window.$ = function (selector) {
 function 获取网址参数(参数) {
   return new URL(window.location.href).searchParams.get(参数)
 }
-
-let 主题 = 获取网址参数('主题') || '一天掉多少根头发'
-
-$('input').value = 主题;
 
 let 论述 = [
     '现在，解决主题的问题，是非常非常重要的。 所以， ',
@@ -203,6 +203,15 @@ let 前面垫话 = [
     '说过一句富有哲理的话'
 ]
 
+let 初始主题 = [
+    '一天掉多少根头发',
+    '中午吃什么',
+    '学生会退会',
+    '好好学习',
+    '生活的意义',
+    '科学和人文谁更有意义'
+]
+
 let 下取整 = Math.floor;
 
 let 同余乘数 = 214013;
@@ -210,6 +219,10 @@ let 同余加数 = 2531011;
 let 同余模 = Math.pow(2,32);
 
 let 随机种子 = 获取网址参数('随机种子') || 下取整( 随便取一个数(0, 同余模, Math.random) );
+
+let 主题 = 获取网址参数('主题') || 随便取一句(初始主题)
+
+$('input').value = 主题;
 
 // LCG https://en.wikipedia.org/wiki/Linear_congruential_generator
 function 同余发生器() {
@@ -275,6 +288,7 @@ function 生成文章(){
 
     let 排版 = '<div>' + 文章.join('</div><div>') + '</div>';
     $('#文章').innerHTML = 排版;
+    $('#声明文字').style.display = 'block'
 }
 
 if (获取网址参数('主题')) {
@@ -339,6 +353,17 @@ if (获取网址参数('主题')) {
       font-size: 2rem;
       text-align: justify;
     }
+    #声明{
+      float: left;
+      margin: 0 0 0 6px;
+    }
+    #声明 p{
+      margin: 0 0 3px 3px;
+      font-size: 1.4rem;
+    }
+    #声明文字{
+      display: none;
+    }
     #页脚{
       margin: 6px;
     }
@@ -348,7 +373,7 @@ if (获取网址参数('主题')) {
       text-align: right;
     }
     .链接{
-      color: #4169e1;
+      color: #666666;
     }
     .图标{
       height: 1rem;
@@ -412,6 +437,17 @@ if (获取网址参数('主题')) {
       margin-top: 20px;
       text-align: justify;
     }
+    #声明{
+      float: left;
+      margin: 0 0 0 20px;
+    }
+    #声明 p{
+      margin: 0 0 5px 5px;
+      font-size: 0.75rem;
+    }
+    #声明文字{
+      display: none;
+    }
     #页脚{
       margin: 20px;
     }
@@ -421,7 +457,7 @@ if (获取网址参数('主题')) {
       text-align: right;
     }
     .链接{
-      color: #4169e1;
+      color: #666666;
     }
     #页脚 span{
       padding: 2px 0 0 0;
