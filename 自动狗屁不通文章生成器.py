@@ -39,16 +39,33 @@ def 另起一段():
     return xx
 
 if __name__ == "__main__":
+    root = './generated/'
+    files = os.listdir(root)
     xx = input("请输入文章主题:")
-    for x in xx:
-        tmp = str()
-        while ( len(tmp) < 6000 ) :
-            分支 = random.randint(0,100)
-            if 分支 < 5:
-                tmp += 另起一段()
-            elif 分支 < 20 :
-                tmp += 来点名人名言()
-            else:
-                tmp += next(下一句废话)
-        tmp = tmp.replace("x",xx)
-        print(tmp)
+    name = xx + '.txt'
+    if name in os.listdir(root):
+        x = 1
+        for i in range(len(files)):
+            if name == files[i][0:-4]:
+                x += 1
+        print("your {} file is already existed, continue to do so will override your file".format(xx))
+        Do = input('do you want to add num {} behind you filename?(Y/N):'.format(x))
+        if Do == 'N' or Do == 'n':
+            exit(1);
+        else:
+            name = xx + '({}).txt'.format(x)
+    with open(root + name,'w', encoding='utf-8') as f:
+        for x in xx:
+            tmp = str()
+            while ( len(tmp) < 6000 ) :
+                分支 = random.randint(0,100)
+                if 分支 < 5:
+                    tmp += 另起一段()
+                elif 分支 < 20 :
+                    tmp += 来点名人名言()
+                else:
+                    tmp += next(下一句废话)
+            tmp = tmp.replace("x",xx)
+            print(tmp)
+            f.write(tmp)
+
