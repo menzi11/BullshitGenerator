@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-import os, re
+import os, re, sys
 import random,readJSON
 
 data = readJSON.读JSON文件("data.json")
@@ -39,7 +39,7 @@ def 另起一段():
     return xx
 
 if __name__ == "__main__":
-    xx = input("请输入文章主题:")
+    xx = sys.argv[1]
     for x in xx:
         tmp = str()
         while ( len(tmp) < 6000 ) :
