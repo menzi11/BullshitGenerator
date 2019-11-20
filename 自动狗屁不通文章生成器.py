@@ -3,6 +3,7 @@
 
 import os, re
 import random,readJSON
+import  pandas as pd
 
 data = readJSON.读JSON文件("data.json")
 名人名言 = data["famous"] # a 代表前面垫话，b代表后面垫话
@@ -51,4 +52,6 @@ if __name__ == "__main__":
             else:
                 tmp += next(下一句废话)
         tmp = tmp.replace("x",xx)
-        print(tmp)
+        #print(tmp)
+        with open("傻逼文章.txt", "w") as f:
+            f.write(tmp)
