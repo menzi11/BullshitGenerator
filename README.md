@@ -9,7 +9,12 @@
 
 Needs to generate some texts to test if my GUI rendering codes good or not. So I made this.
 
+## 再次声明一下，本项目生成的文章真的狗屁不通，只能拿来搞笑，请不要用于正规用途！
+## 再次声明一下，本项目生成的文章真的狗屁不通，只能拿来搞笑，请不要用于正规用途！
+## 再次声明一下，本项目生成的文章真的狗屁不通，只能拿来搞笑，请不要用于正规用途！
+
 本项目为 Python 3 版本，还有由 suulnnka 修改的在线版，使用更加方便：
+
 https://suulnnka.github.io/BullshitGenerator/index.html
 
 下一步计划：
@@ -18,7 +23,7 @@ https://suulnnka.github.io/BullshitGenerator/index.html
 3. 加入马三立《开会迷》里的内容
 4. 加入手写体直接渲染出图片的功能（__仅仅用于测试本人的打印机是否工作正常，请勿做它用__）
 
-----
+---
 
 ## 关于 Pull requests
 
