@@ -2,8 +2,11 @@
 # BullshitGenerator
 
 偶尔需要一些中文文字用于GUI开发时测试文本渲染. __本项目只做这一项, 请勿用于其他任何用途__.
-
 Needs to generate some texts to test if my GUI rendering codes good or not. so I made this.
+
+## 再次声明一下, 本项目生成的文章真的狗屁不通, 只能拿来搞笑, 请不要用于正规用途!
+## 再次声明一下, 本项目生成的文章真的狗屁不通, 只能拿来搞笑, 请不要用于正规用途!
+## 再次声明一下, 本项目生成的文章真的狗屁不通, 只能拿来搞笑, 请不要用于正规用途!
 
 本项目为python3版本, 还有由suulnnka修改在线版, 使用更加方便:
 https://suulnnka.github.io/BullshitGenerator/index.html
