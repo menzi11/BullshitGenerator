@@ -4,6 +4,7 @@
     <meta http-equiv="content-type" content="txt/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="data:image/ico;base64,aWNv">
+    <script src="https://hm.baidu.com/hm.js?058d1e446dd338b69f2e385ba2f930f2"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM8WXEWW3P"></script>
   </head>
   <body>
@@ -36,17 +37,24 @@
 </html>
 
 <script>
+let _hmt = _hmt || [];
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-BM8WXEWW3P');
 
+function track(eventName, title, seed) {
+    gtag('event', eventName, {'event_label': title,'seed': seed,'title_seed':title+'_'+seed});
+    _hmt.push(['_trackEvent', eventName, 'title', title]);
+    _hmt.push(['_trackEvent', eventName, 'title_seed', title+'_'+seed]);
+}
+
 window.$ = function (selector) {
-  return document.querySelector(selector);
+    return document.querySelector(selector);
 }
 
 function 获取网址参数(参数) {
-  return new URL(window.location.href).searchParams.get(参数)
+    return new URL(window.location.href).searchParams.get(参数)
 }
 
 let 论述 = [
@@ -263,7 +271,7 @@ function 增加段落(段落){
 function 生成文章(){
     主题 = $('input').value
     history.pushState({url: window.location.href}, null ,'?主题=' + 主题 + '&随机种子=' + 随机种子);
-    gtag('event', 'generator', {'event_label': 主题,'seed': 随机种子,'title_seed':主题+'_'+随机种子});
+    track('generator', 主题, 随机种子);
     let 文章 = []
     let 段落 = '';
     let 文章长度 = 0;
@@ -293,7 +301,7 @@ function 生成文章(){
 
 if (获取网址参数('主题')) {
     生成文章();
-    gtag('event', 'shared', {'event_label': 主题,'seed': 随机种子,'title_seed':主题+'_'+随机种子});
+    track('shared', 主题, 随机种子);
 }
 
 </script>
