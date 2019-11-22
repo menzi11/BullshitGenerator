@@ -93,5 +93,4 @@ func main() {
 	}
 	文章 = strings.ReplaceAll(文章, "x", 标题)
 	fmt.Print(文章)
-	fmt.Print(utf8.RuneCountInString(文章))
 }
