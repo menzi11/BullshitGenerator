@@ -12,7 +12,7 @@ import (
 )
 
 type data struct {
-	Title  string   //
+	Title  string   // 标题
 	Famous []string // 名人名言
 	Before []string // 前面垫话
 	After  []string // 后面垫话
