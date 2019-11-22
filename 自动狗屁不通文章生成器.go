@@ -65,8 +65,8 @@ func 洗牌遍历(列表 []string) func() string {
 
 func 来点名人名言() (名人名言 string) {
 	名人名言 = 下一句名人名言()
-	名人名言 = strings.ReplaceAll(名人名言, "a", 前面垫话[rand.Intn(len(前面垫话))])
-	名人名言 = strings.ReplaceAll(名人名言, "b", 后面垫话[rand.Intn(len(后面垫话))])
+	名人名言 = strings.Replace(名人名言, "a", 前面垫话[rand.Intn(len(前面垫话))], -1)
+	名人名言 = strings.Replace(名人名言, "b", 后面垫话[rand.Intn(len(后面垫话))], -1)
 	return
 }
 
@@ -91,6 +91,6 @@ func main() {
 			文章 += 下一句废话()
 		}
 	}
-	文章 = strings.ReplaceAll(文章, "x", 标题)
+	文章 = strings.Replace(文章, "x", 标题, -1)
 	fmt.Println(文章)
 }
