@@ -3,7 +3,7 @@ import java.util.List;
 
 public class BullshitGeneratorUtil {
 
-    public static String 主题 = "你妈死了";
+    public static String 主题 = "666";
 
     public static int 需要的文章长度 = 6000;
     
