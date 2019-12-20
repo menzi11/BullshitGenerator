@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-import os, re
+import os, re, sys
 import random,readJSON
 
 data = readJSON.读JSON文件("data.json")
@@ -20,7 +20,8 @@ def 洗牌遍历(列表):
     while True:
         random.shuffle(池)
         for 元素 in 池:
-            yield 元素
+            if not tmp.endswith(元素):
+                yield 元素
 
 下一句废话 = 洗牌遍历(废话)
 下一句名人名言 = 洗牌遍历(名人名言)
@@ -39,10 +40,15 @@ def 另起一段():
     return xx
 
 if __name__ == "__main__":
-    xx = input("请输入文章主题:")
+    try:
+        xx = sys.argv[1]
+        文章长度 = int(sys.argv[2])
+    except:
+        xx = input("请输入文章主题:")
+        文章长度 = 6000
     for x in xx:
         tmp = str()
-        while ( len(tmp) < 6000 ) :
+        while ( len(tmp) < 文章长度 ) :
             分支 = random.randint(0,100)
             if 分支 < 5:
                 tmp += 另起一段()
