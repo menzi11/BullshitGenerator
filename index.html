@@ -184,12 +184,12 @@ function 增加段落(章节){
 }
 
 function 生成文章(){
-    主题 = $('input').value
+    let 主题 = $('#主题').value, 字数 = $('#字数').value;
     let 文章 = []
     for(let 空 in 主题){
         let 章节 = "";
         let 章节长度 = 0;
-        while( 章节长度 < 6000 ){
+        while( 章节长度 < 字数 ){
             let 随机数 = 随便取一个数();
             if(随机数 < 5 && 章节.length > 200){
                 章节 = 增加段落(章节);
@@ -214,6 +214,9 @@ function 生成文章(){
 
 </script>
 <div>bullshit generator</div>
-<div>主题<input value="一天掉多少根头发"></input></div>
+<div>
+  <label>主题<input id="主题" value="一天掉多少根头发"></input></label>
+  <label>字数<input id="字数" value="6000" type="number"></input></label>
+</div>
 <div></div><button onclick="生成文章()">生成</button></div>
 <div id="论文"></div>
