@@ -52,3 +52,4 @@ if __name__ == "__main__":
                 tmp += next(下一句废话)
         tmp = tmp.replace("x",xx)
         print(tmp)
+        os.system('pause') #暂停程序防止窗口运行完成而销毁
