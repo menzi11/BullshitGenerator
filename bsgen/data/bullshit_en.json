@@ -1,0 +1,42 @@
+{
+  "name":"English",
+  "rules": [
+    [
+      "T[bosh]"
+    ]
+  ],
+  "data": {
+    "T[bosh]": [
+      "xx is a common condition among civilians in today’s society, so",
+      "xx has become increasingly evident among teens according to many scientists",
+      "now, solving xx is becoming a more and more significant issue",
+      "we have to face an embarrassing situation, that is, ",
+      "what should we do to give rise to xx, and what should we do to prevent xx's happening.",
+      "but these are not the most urgent issue, a more pressing issue about xx is,",
+      "what could we do anyway to ahchieve xx. ",
+      "With these questions, let's take a closer look to xx.",
+      "For xx, the key point is how to express xx. ",
+      "We generally say, if we grasped the key of the problem of xx, everthing else will be easily solved.",
+      "What is the key point of xx?",
+      "Why does xx happen?",
+      "Every person has to face these problems caused by xx, when facing these problems,",
+      "We must think carefully when talking about xx.",
+      "We have to figure out what kind of exist xx is",
+      "For many years, people with xx have been viewed as different.",
+      "The problem lies in the difference of people raised by xx,",
+      "Does the government provide help for xx? ",
+      "As this subject continues to be looked down on people must realize that xx are becoming more common in today’s world.",
+      "More current studies of people who take xx heavely show no evidence of emotional damage.",
+      "Several studies of the effects of xx on the human systems have failed to demonstrate these effects.",
+      "One of the longest standing arguments against the use of xx is that,",
+      "Modern vehement arguments against xx alone become suspect.",
+      "xx continues to be a relevant controversial issue in society today, as",
+      "From my piont of view, xx means a lot to me, and",
+      "We have been thinking about xx for a long time.",
+      "What if xx happens, and what if xx does not happen.",
+      "When facing this difficult choice of xx, I rarely slept well.",
+      "If xx takes place in our daliy life, we have to consider its consequence.",
+      "The consequece of xx is of great significance to me, and to many other people."
+    ]
+  }
+}
