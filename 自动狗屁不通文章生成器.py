@@ -12,7 +12,7 @@ data = readJSON.读JSON文件("data.json")
 
 xx = "学生会退会"
 
-重复度 = 2
+重复度 = 1
 
 def 洗牌遍历(列表):
     global 重复度
@@ -24,16 +24,18 @@ def 洗牌遍历(列表):
 
 下一句废话 = 洗牌遍历(废话)
 下一句名人名言 = 洗牌遍历(名人名言)
+下一句前面垫话 = 洗牌遍历(前面垫话)
+下一句后面垫话 = 洗牌遍历(后面垫话)
 
 def 来点名人名言():
     global 下一句名人名言
     xx = next(下一句名人名言)
-    xx = xx.replace(  "a",random.choice(前面垫话) )
-    xx = xx.replace(  "b",random.choice(后面垫话) )
+    xx = xx.replace(  "a",next(下一句前面垫话) )
+    xx = xx.replace(  "b",next(下一句后面垫话) )
     return xx
 
 def 另起一段():
-    xx = ". "
+    xx = ""
     xx += "\r\n"
     xx += "    "
     return xx
@@ -41,14 +43,18 @@ def 另起一段():
 if __name__ == "__main__":
     xx = input("请输入文章主题:")
     for x in xx:
-        tmp = str()
+        tmp = "    "
+        刚起过一段 = True
         while ( len(tmp) < 6000 ) :
             分支 = random.randint(0,100)
-            if 分支 < 5:
+            if 分支 < 5 and 刚起过一段 == False:
                 tmp += 另起一段()
+                刚起过一段 = True
             elif 分支 < 20 :
                 tmp += 来点名人名言()
+                刚起过一段 = False
             else:
                 tmp += next(下一句废话)
+                刚起过一段 = False
         tmp = tmp.replace("x",xx)
         print(tmp)
