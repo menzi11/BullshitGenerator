@@ -3,13 +3,16 @@ import random, json
 import sys
 
 import inquirer
+import bsgen
 
 xx = "Test"
 repeatetime = 1
 
 # read files
 data_file_dict = dict()
-for path, subdirs, files in os.walk('bsgen/data'):
+print("PATH",os.path.join(os.path.dirname(bsgen.__file__), 'data'))
+for path, subdirs, files in os.walk(os.path.join(os.path.dirname(bsgen.__file__), 'data')):
+    print(path)
     for file in files:
         with open(os.path.join(path, file), "r", encoding="utf8") as f:
             bullshitf = json.load(f)
