@@ -1,5 +1,5 @@
 # 狗屁不通文章生成器
-# BullshitGenerator
+# Bullshit Generator
 
 偶尔需要一些中文文字用于GUI开发时测试文本渲染. __本项目只做这一项, 请勿用于其他任何用途__.
 Needs to generate some texts to test if my GUI rendering codes good or not. so I made this.
@@ -30,3 +30,6 @@ https://suulnnka.github.io/BullshitGenerator/index.html
 ## 关于生成算法
 
 鄙人才疏学浅并不会任何自然语言处理相关算法. 而且目前比较偏爱简单有效的方式达到目的方式. 除非撞到了天花板, 否则暂时不会引入任何神经网络等算法. 不过欢迎任何人另开分支实现更复杂, 效果更好的算法. 不过除非效果拔群, 否则鄙人暂时不会融合.
+
+
+**Made with love. 
