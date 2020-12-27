@@ -184,9 +184,13 @@ function 增加段落(章节){
 }
 
 function 生成文章(){
-    主题 = $('input').value
+    主题 = $('#主题').value
+    段数 = parseInt($('#段数').value)
+    if (段数 === -1){
+        段数 = 主题.length
+    }
     let 文章 = []
-    for(let 空 in 主题){
+    for(var 空 = 0; 空 < 段数; 空++){
         let 章节 = "";
         let 章节长度 = 0;
         while( 章节长度 < 6000 ){
@@ -203,17 +207,27 @@ function 生成文章(){
                 let 句子 = 来点论述();
                 章节长度 = 章节长度 + 句子.length;
                 章节 = 章节 + 句子;
+                // 防止章节最后套话没有名言做铺垫
+                if ((300 - 章节.length) < 50){
+                    let 句子 = 来点名人名言();
+                    章节长度 = 章节长度 + 句子.length;
+                    章节 = 章节 + 句子;
+                }
             }
         }
         章节 = 增加段落(章节);
         文章.push(章节);
     }
     let 排版 = "<div>" + 文章.join("</div><div>") + "</div>";
+    let 结论 = "　　" + "综上所述， x的重要性真是无与伦比， 正如成语说的：缺一不可。有x， 就如".replace('x', 主题).replace('x', 主题) + 随便取一句(名人名言) + "。 "
     $("#论文").innerHTML = 排版;
+    $('#结论').innerHTML = "<div>" + 结论 + "</div>"
 }
 
 </script>
 <div>bullshit generator</div>
-<div>主题<input value="一天掉多少根头发"></input></div>
+<div>主题<input value="一天掉多少根头发" id="主题"></input></div>
+<div>输入段数（可选）<input value="-1" id="段数"></input></div>
 <div></div><button onclick="生成文章()">生成</button></div>
 <div id="论文"></div>
+<div id="结论"></div>
