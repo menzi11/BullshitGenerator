@@ -34,21 +34,32 @@ def 来点名人名言():
 
 def 另起一段():
     xx = ". "
-    xx += "\r\n"
+    xx += "\n"
     xx += "    "
     return xx
 
 if __name__ == "__main__":
     xx = input("请输入文章主题:")
-    for x in xx:
-        tmp = str()
-        while ( len(tmp) < 6000 ) :
-            分支 = random.randint(0,100)
-            if 分支 < 5:
-                tmp += 另起一段()
-            elif 分支 < 20 :
-                tmp += 来点名人名言()
-            else:
-                tmp += next(下一句废话)
-        tmp = tmp.replace("x",xx)
-        print(tmp)
+
+    flag = input("是否输出到文件？>>(y/n)")
+    if flag.lower() == "y":
+        flag = True
+    else:
+        flag = False
+
+    
+    tmp = str()
+    while ( len(tmp) < 6000 ) :
+        分支 = random.randint(0,100)
+        if 分支 < 5:
+            tmp += 另起一段()
+        elif 分支 < 20 :
+            tmp += 来点名人名言()
+        else:
+            tmp += next(下一句废话)
+    tmp = tmp.replace("x",xx)
+    print(tmp)
+    if flag:
+        with open("result.txt", "w") as f:
+            f.write(tmp)
+        print("\n结果已输出到result.txt！")
