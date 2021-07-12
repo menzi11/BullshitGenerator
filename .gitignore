@@ -106,3 +106,4 @@ __pycache__/
 test/
 .vscode/
 .gitignore
+result.txt
