@@ -1,4 +1,4 @@
-#!/usr/bin/python
+data.9k.bin/python
 # -*- coding: UTF-8 -*-
 
 import os, re
