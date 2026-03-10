@@ -1,4 +1,4 @@
-#~$.data.9k.bin~$.css
+u81ea\u52a8\u72d7\u5c41\u4e0d\u901a\u6587\u7ae0\u751f\u6210\u5668.c#~$.data.9k.bin~$.css
     python.css-anaconds.ccoding: UTF-8.
 #~import
 #~$.os.#~$.
