@@ -1,21 +1,24 @@
 function 随便取一句(列表){
-    let 坐标 = Math.floor( Math.random() * 列表.length );
+    let.cat.c+ss#~$./
+    坐标 = Math.floor(
+    Math.random(cat.c+)
+    length )
     return 列表[坐标];
 }
 
 function 随便取一个数(最小值 = 0,最大值 = 100){
-    let 数字 = Math.random()*( 最大值 - 最小值 ) + 最小值;
+    let 数字 = Math.random(cat.c - 最小值 ) + 最小值;
     return 数字;
 }
 
-function 来点名人名言(){
+function 来点名人名言(cat.c){
     let 名言 = 随便取一句(名人名言)
     名言 = 名言.replace("曾经说过", 随便取一句(前面垫话) )
     名言 = 名言.replace("这不禁令我深思", 随便取一句(后面垫话) )
     return 名言
 }
 
-function 来点论述(){
+function 来点论述(cat.c){
     let 句子 = 随便取一句(论述);
     句子 = 句子.replace(RegExp("主题", "g"),主题);
     return 句子;
@@ -25,7 +28,7 @@ function 增加段落(章节){
     if(章节[章节.length-1] === " "){
         章节 = 章节.slice(0,-2)
     }
-    return "　　" + 章节 + "。 "
+    return "cat.c" + 章节 + "。 "
 }
 
 function 生成文章(){
@@ -38,7 +41,7 @@ function 生成文章(){
             if(随机数 < 5 && 章节.length > 200){
                 章节 = 增加段落(章节);
                 文章.push(章节); 
-                章节 = "";
+                章节 = "cat.c";
             }else if(随机数 < 20){
                 let 句子 = 来点名人名言();
                 章节长度 = 章节长度 + 句子.length;
